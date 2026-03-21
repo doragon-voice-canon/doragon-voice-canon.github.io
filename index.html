@@ -21,7 +21,7 @@
             padding: 0;
             color: #333;
             line-height: 1.6;
-            background-color: #fff; /* ★修正：背景色を真っ白に */
+            background-color: #fff;
             scroll-behavior: smooth;
         }
         h1, h2, h3 {
@@ -44,12 +44,11 @@
             padding: 15px 0;
             text-align: center;
         }
-        /* ★ロゴ動画を削除したため、ここにあったCSSも削除 */
 
         nav ul {
             list-style: none;
             padding: 0;
-            margin: 10px 0 0;
+            margin: 0; /* マージンを調整 */
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -67,35 +66,32 @@
 
         /* メインビジュアル */
         .main-visual {
-            background-color: #000; /* 動画読み込み前の背景色 */
+            background-color: #000;
             color: #fff;
             text-align: center;
             padding: 150px 20px;
             position: relative;
-            overflow: hidden; /* 追加：動画がはみ出さないようにする */
+            overflow: hidden;
         }
         
-        /* 追加：文字を読みやすくするための黒い半透明フィルター */
         .main-visual::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* 黒の50%透過 */
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
 
-        /* 追加：背景動画のスタイル */
         .bg-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 画面比率を保ったまま隙間なく埋める */
+            object-fit: cover;
             z-index: 0;
         }
 
-        /* コンテナのz-indexを2にして一番手前に持ってくる */
         .main-visual .container { 
             position: relative; 
             z-index: 2; 
@@ -234,8 +230,7 @@
             .google-form-container iframe { height: 950px; }
         }
 
-        /* --- ★追加：オープニング画面のスタイル --- */
-        /* 動画再生中はスクロールできないようにする */
+        /* --- オープニング画面のスタイル --- */
         body.no-scroll {
             overflow: hidden;
         }
@@ -246,15 +241,14 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #000; /* 背景を黒に */
-            z-index: 9999; /* 一番手前に表示 */
+            background-color: #fff; /* ★背景を真っ白に修正 */
+            z-index: 9999;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: opacity 1s ease-out, visibility 1s ease-out; /* 1秒かけてフワッと消える設定 */
+            transition: opacity 1s ease-out, visibility 1s ease-out;
         }
 
-        /* 非表示になるときのクラス */
         #intro-screen.hidden {
             opacity: 0;
             visibility: hidden;
@@ -262,10 +256,9 @@
 
         #intro-video {
             width: 100%;
-            max-width: 800px; /* 動画が大きくなりすぎないように制限 */
+            max-width: 800px;
             height: auto;
         }
-        /* --- 追加ここまで --- */
     </style>
 </head>
 <body>
@@ -275,8 +268,6 @@
 
     <header>
         <div class="container">
-            <div style="font-size: 1.5em; font-weight: 700; margin-bottom: 10px; font-family: 'Playfair Display', serif;">華音工房龍聲制作翻訳機構</div>
-            
             <nav>
                 <ul>
                     <li><a href="#about">事業概要</a></li>
@@ -388,4 +379,98 @@
                     <div class="work-item">
                         <img src="hq720.jpg?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop&dpr=2" alt="作品例1" />
                         <div class="work-item-content">
-                            <h3>作品タイトル：<a href="https://www.reelshort.com/ja/episodes/episode-1-%E5%90%B9%E3%81%8D%E6%9B%BF%E3%81%88%E7%89%88-%E3%81%A9%E3%82%93%E5%BA%95%E4%BA%BA%E7%94%9F%E3%81%8C%E3%82%B3%E3%82%A4%E3%83%B3%E3%81%A7%E5%A4%A7%E9%80%86%E8%BB%A2-699fb751f557bce95
+                            <h3>作品タイトル：<a href="https://www.reelshort.com/ja/episodes/episode-1-%E5%90%B9%E3%81%8D%E6%9B%BF%E3%81%88%E7%89%88-%E3%81%A9%E3%82%93%E5%BA%95%E4%BA%BA%E7%94%9F%E3%81%8C%E3%82%B3%E3%82%A4%E3%83%B3%E3%81%A7%E5%A4%A7%E9%80%86%E8%BB%A2-699fb751f557bce950036949-6962p3h08d">［吹き替え版］どん底人生がコインで大逆転</a></h3>
+                            <p><strong>クライアント:</strong> Reel Short様</p>
+                            <p><strong>担当業務:</strong> 翻訳、キャスティング、音響制作</p>
+                        </div>
+                    </div>
+                    <div class="work-item">
+                        <img src="1771036622012207a4a22.webp?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop&dpr=2" alt="作品例2" />
+                        <div class="work-item-content">
+                            <h3>作品タイトル：<a href="https://www.shorttv.live/ja/drama/%E5%90%B9%E6%9B%BF%E5%AE%9F%E3%81%AF%E5%BE%A1%E6%9B%B9%E5%8F%B8-11948">実は御曹司</a></h3>
+                            <p><strong>クライアント:</strong> ShortMax様</p>
+                            <p><strong>担当業務:</strong> 翻訳、キャスティング、音響制作</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="company" class="container">
+            <div class="section-header">
+                <h2>会社概要</h2>
+            </div>
+            <div class="company-info">
+                <strong>会社名</strong> <span>華音工房龍聲制作翻訳機構合同会社</span>
+                <strong>設立</strong> <span>2025年10月9日 </span>
+                <strong>法人番号</strong> <span>8240003007440</span>
+                <strong>代表者</strong> <span>屋久谷　拓哉</span>
+                <strong>所在地</strong> <span>〒162-0837 東京都新宿区納戸町 10-405</span>
+                <strong>事業内容</strong> <span>
+                    <ul>
+                        <li>海外映像コンテンツの日本語吹き替え版制作</li>
+                        <li>翻訳・ローカライゼーション業務</li>
+                        <li>声優のキャスティング</li>
+                        <li>音響制作（収録、編集、MA）</li>
+                        <li>映像コンテンツのプロモーション企画</li>
+                    </ul>
+                </span>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <div class="section-header">
+                <h2>ご相談・お見積もり依頼</h2>
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">中国縦型ショートドラマやYouTube、その他映像作品の日本語吹き替えに関するご相談、お見積もりのご依頼など、まずはお気軽にご連絡ください。<br />内容を確認後、担当者より3営業日以内に返信いたします。</p>
+
+            <div class="google-form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeS5PCnQLplP9qXyOrxEEpT9LPWh9nmYkMBGU1QILWe8BTbkg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&#169; 2025 華音工房龍聲制作翻訳機構合同会社. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.body.classList.add('no-scroll');
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const introScreen = document.getElementById('intro-screen');
+            const introVideo = document.getElementById('intro-video');
+
+            // 画面を消す共通の命令
+            function hideIntro() {
+                if (!introScreen.classList.contains('hidden')) {
+                    introScreen.classList.add('hidden'); // フワッと消す
+                    document.body.classList.remove('no-scroll'); // スクロール再開
+                    
+                    // 完全に消し去る（裏側でクリックの邪魔にならないように）
+                    setTimeout(function() {
+                        introScreen.style.display = 'none';
+                    }, 1000);
+                }
+            }
+
+            // パターン1：動画が通常通り最後まで再生された時
+            introVideo.addEventListener('ended', hideIntro);
+
+            // パターン2：動画が最後まで行かずに数ミリ秒残って止まってしまうバグ対策
+            introVideo.addEventListener('timeupdate', function() {
+                if (introVideo.duration && introVideo.currentTime >= introVideo.duration - 0.1) {
+                    hideIntro();
+                }
+            });
+
+            // パターン3：万が一、動画が再生されなかった場合の保険（8秒後に強制的にHPを表示）
+            // ※ もしオープニング動画が8秒以上ある場合は、この「8000」の数字を大きくしてください。
+            setTimeout(hideIntro, 8000); 
+        });
+    </script>
+</body>
+</html>
