@@ -48,7 +48,7 @@
         nav ul {
             list-style: none;
             padding: 0;
-            margin: 0; /* マージンを調整 */
+            margin: 0; 
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -115,10 +115,11 @@
             padding: 80px 0;
             background-color: #fff;
             margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 20px; /* ★修正：8pxから20pxに丸みを大幅に大きくする */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* ★修正：影も大きくして白背景でも立体感を出す */
         }
         section:nth-of-type(even) { background-color: #f0f4f7; }
+
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 {
             position: relative;
@@ -241,7 +242,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #fff; /* ★背景を真っ白に修正 */
+            background-color: #fff; 
             z-index: 9999;
             display: flex;
             justify-content: center;
@@ -342,7 +343,7 @@
                 <img src="https://images.pexels.com/photos/6598699/pexels-photo-6598699.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="キャスティングのイメージ" />
                 <div class="text-content">
                     <h3>キャスティング</h3>
-                    <p>作品の世界観とキャラクターの個性を完璧に表現できる声優を、経験豊富な代表自らがキャスティング。有名声優から、作品のイメージに合う新進気鋭の若手まで、幅広いネットワークを活かして最適な声をお届けします。</p>
+                    <p>作品の世界観とキャラクターの個性を完璧に表現できる声優を、経験豊富な代表自らがキャスティング。有名声優から, 作品のイメージに合う新進気鋭の若手まで, 幅広いネットワークを活かして最適な声をお届けします。</p>
                 </div>
             </div>
 
@@ -350,7 +351,7 @@
                 <img src="https://images.pexels.com/photos/3710191/pexels-photo-3710191.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="音響制作のイメージ" />
                 <div class="text-content">
                     <h3>音響制作</h3>
-                    <p>最新の設備を備えた提携スタジオでの収録から、編集、MA（最終的な音の調整）まで、高品質な音響制作を統括します。リップシンク（口の動きとセリフを合わせる作業）の精度はもちろん、作品の没入感を高める音響演出で、映像のクオリティをさらに一段階引き上げます。</p>
+                    <p>最新の設備を備えた提携スタジオでの収録から, 編集, MA（最終的な音の調整）まで, 高品質な音響制作を統括します。リップシンク（口の動きとセリフを合わせる作業）の精度はもちろん, 作品の没入感を高める音響演出で, 映像のクオリティをさらに一段階引き上げます。</p>
                 </div>
             </div>
 
@@ -358,7 +359,7 @@
                 <img src="https://images.pexels.com/photos/6476587/pexels-photo-6476587.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop&dpr=2" alt="宣伝プロモーションのイメージ" />
                 <div class="text-content">
                     <h3>宣伝・プロモーション</h3>
-                    <p>「作って終わり」では、成功とはいえません。弊社は、完成した作品をより多くの人に届けるためのプロモーションもサポートします。</p>
+                    <p>「作って終わり」では, 成功とはいえません。弊社は, 完成した作品をより多くの人に届けるためのプロモーションもサポートします。</p>
                     <ul>
                         <li>出演声優のSNSでの告知協力</li>
                         <li>作品の見どころを紹介するプロモーション動画の制作</li>
@@ -422,7 +423,7 @@
             <div class="section-header">
                 <h2>ご相談・お見積もり依頼</h2>
             </div>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">中国縦型ショートドラマやYouTube、その他映像作品の日本語吹き替えに関するご相談、お見積もりのご依頼など、まずはお気軽にご連絡ください。<br />内容を確認後、担当者より3営業日以内に返信いたします。</p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">中国縦型ショートドラマやYouTube、その他映像作品の日本語吹き替えに関するご相談、お見積もりのご依頼など、まずはお気軽にご連絡ください。<br />内容を確認後, 担当者より3営業日以内に返信いたします。</p>
 
             <div class="google-form-container">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeS5PCnQLplP9qXyOrxEEpT9LPWh9nmYkMBGU1QILWe8BTbkg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
@@ -468,7 +469,6 @@
             });
 
             // パターン3：万が一、動画が再生されなかった場合の保険（8秒後に強制的にHPを表示）
-            // ※ もしオープニング動画が8秒以上ある場合は、この「8000」の数字を大きくしてください。
             setTimeout(hideIntro, 8000); 
         });
     </script>
