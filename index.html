@@ -70,15 +70,42 @@
         }
         nav ul li a:hover { color: #3498db; text-decoration: none; }
 
-        /* メインビジュアル */
+/* メインビジュアル */
         .main-visual {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+            background-color: #000; /* 動画読み込み前の背景色 */
             color: #fff;
             text-align: center;
             padding: 150px 20px;
             position: relative;
+            overflow: hidden; /* 追加：動画がはみ出さないようにする */
         }
-        .main-visual .container { position: relative; z-index: 1; }
+        
+        /* 追加：文字を読みやすくするための黒い半透明フィルター */
+        .main-visual::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* 黒の50%透過 */
+            z-index: 1;
+        }
+
+        /* 追加：背景動画のスタイル */
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 画面比率を保ったまま隙間なく埋める */
+            z-index: 0;
+        }
+
+        /* コンテナのz-indexを2にして一番手前に持ってくる */
+        .main-visual .container { 
+            position: relative; 
+            z-index: 2; 
+        }
+        
         .main-visual h1 { color: #fff; font-size: 3.5em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
         .main-visual p { font-size: 1.3em; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
         .btn-primary {
@@ -232,7 +259,9 @@
 
     <main>
         <!-- 既存のメインコンテンツはそのまま -->
-        <section class="main-visual">
+       <section class="main-visual">
+            <video class="bg-video" src="動画ファイルのURL.mp4" autoplay loop muted playsinline></video>
+            
             <div class="container">
                 <h1>その物語に、日本の『声』を。</h1>
                 <p>中国ショートドラマの熱狂を、日本市場へ。</p>
@@ -325,10 +354,10 @@
 
                 <div class="works-grid">
                     <div class="work-item">
-                        <img src="https://i.ytimg.com/vi/t-5J2DDEI7s/maxresdefault.jpg?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop&dpr=2" alt="作品例1" />
+                        <img src="https://app.reelshort.com/_next/image?url=https%3A%2F%2Fv-mps.crazymaplestudios.com%2Fimages%2Fe0725600-b315-11f0-a06b-bdb674869ea1.jpg?auto=compress&cs=tinysrgb&w=400&h=200&fit=crop&dpr=2" alt="作品例1" />
                         <div class="work-item-content">
-                            <h3>作品タイトル：入婿の俺、父は世界一の大富豪</h3>
-                            <p><strong>クライアント:</strong> Good Short様</p>
+                            <h3>作品タイトル：<a href="https://app.reelshort.com/app-video-share/699fb751f557bce950036949">［吹き替え版］どん底人生がコインで大逆転</a></h3>
+                            <p><strong>クライアント:</strong> Reel Short様</p>
                             <p><strong>担当業務:</strong> 翻訳、キャスティング、音響制作</p>
                         </div>
                     </div>
